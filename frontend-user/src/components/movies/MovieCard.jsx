@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
 /**
@@ -11,6 +13,7 @@ import { useCart } from "../../context/CartContext";
  * Props : movie { id, title, description, year, category, rating, image, duration }
  */
 export default function MovieCard({ movie }) {
+  const navigate = useNavigate();
   const { handleAddToCart, handleRemoveFromCart, isInCart } = useCart();
   const inCart = isInCart(movie.id);
 
@@ -46,7 +49,10 @@ export default function MovieCard({ movie }) {
   const badgeColor = categoryColors[category] || "bg-netflix-gray";
 
   return (
-    <div className="group relative min-w-[180px] md:min-w-[220px] cursor-pointer snap-start">
+    <div
+      onClick={() => navigate(`/movie/${movie.id}`)}
+      className="group relative min-w-45 md:min-w-55 cursor-pointer snap-start"
+    >
       {/* Badge "Loué" si dans le panier */}
       {inCart && (
         <div className="absolute top-2 left-2 z-40 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">
@@ -78,12 +84,12 @@ export default function MovieCard({ movie }) {
         <img
           src={movie.image}
           alt={movie.title}
-          className="w-full h-[270px] md:h-[320px] object-cover"
+          className="w-full h-67.5 md:h-80 object-cover"
           loading="lazy"
         />
 
         {/* Overlay au hover — apparaît en douceur */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
           {/* Boutons d'action */}
           <div className="flex items-center gap-2 mb-2">
             {/* Bouton Louer */}
@@ -137,7 +143,10 @@ export default function MovieCard({ movie }) {
                 </svg>
               )}
             </button>
-            <button className="w-8 h-8 rounded-full border-2 border-white/50 text-white flex items-center justify-center hover:border-white transition-colors">
+            <button
+              onClick={(e) => e.stopPropagation()}
+              className="w-8 h-8 rounded-full border-2 border-white/50 text-white flex items-center justify-center hover:border-white transition-colors"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
@@ -154,7 +163,10 @@ export default function MovieCard({ movie }) {
               </svg>
             </button>
             {/* Bouton infos — poussé à droite */}
-            <button className="ml-auto w-8 h-8 rounded-full border-2 border-white/50 text-white flex items-center justify-center hover:border-white transition-colors">
+            <button
+              onClick={(e) => e.stopPropagation()}
+              className="ml-auto w-8 h-8 rounded-full border-2 border-white/50 text-white flex items-center justify-center hover:border-white transition-colors"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
@@ -199,3 +211,16 @@ export default function MovieCard({ movie }) {
     </div>
   );
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    year: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    category: PropTypes.string,
+    rating: PropTypes.number,
+    image: PropTypes.string,
+    duration: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }).isRequired,
+};

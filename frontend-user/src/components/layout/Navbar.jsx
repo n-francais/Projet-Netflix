@@ -1,21 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { useCart } from "../../context/CartContext";
+import { NavLink, useNavigate } from "react-router-dom";
 
-/**
- * Navbar — Barre de navigation Netflix (dynamique TP04)
- *
- * Fonctionnalités :
- *  - Transparente → opaque au scroll (useEffect + addEventListener)
- *  - Barre de recherche animée (toggle open/close)
- *  - Dropdown panier avec compteur temps réel + suppression double-clic
- *  - Destructuring systématique des props et objets
- *
- * Props : { searchQuery, onSearchChange }
- */
 export default function Navbar({ searchQuery = "", onSearchChange }) {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [localQuery, setLocalQuery] = useState(searchQuery);
   const { cart, cartCount, handleRemoveFromCart, clearCart } = useCart();
   const searchRef = useRef(null);
   const cartRef = useRef(null);
@@ -49,7 +42,21 @@ export default function Navbar({ searchQuery = "", onSearchChange }) {
     }
   }, [searchOpen]);
 
-  const links = ["Accueil", "Séries", "Films", "Nouveautés", "Ma liste"];
+  // ─── Vérifier l'authentification ──────────────────
+  useEffect(() => {
+    const stored = localStorage.getItem("user");
+    if (stored) {
+      setUser(JSON.parse(stored));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("rentals");
+    setUser(null);
+    clearCart();
+    navigate("/");
+  };
 
   return (
     <nav
@@ -65,14 +72,30 @@ export default function Navbar({ searchQuery = "", onSearchChange }) {
           NETFLIX
         </h1>
         <ul className="hidden md:flex items-center gap-5 text-sm">
-          {links.map((link) => (
-            <li
-              key={link}
-              className="text-netflix-light hover:text-white transition-colors duration-300 cursor-pointer"
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary font-bold"
+                  : "text-gray-300 hover:text-white transition-colors duration-300"
+              }
             >
-              {link}
-            </li>
-          ))}
+              Accueil
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/my-rentals"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary font-bold"
+                  : "text-gray-300 hover:text-white transition-colors duration-300"
+              }
+            >
+              Mes locations
+            </NavLink>
+          </li>
         </ul>
       </div>
 
@@ -108,14 +131,34 @@ export default function Navbar({ searchQuery = "", onSearchChange }) {
           >
             <input
               type="text"
-              value={searchQuery}
-              onChange={(e) => onSearchChange?.(e.target.value)}
+              value={onSearchChange ? searchQuery : localQuery}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (onSearchChange) {
+                  onSearchChange(value);
+                } else {
+                  setLocalQuery(value);
+                  navigate(`/search?q=${encodeURIComponent(value)}`);
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !onSearchChange) {
+                  navigate(`/search?q=${encodeURIComponent(localQuery)}`);
+                }
+              }}
               placeholder="Titres, genres, réalisateurs..."
               className="w-full bg-transparent text-white text-sm px-8 py-1.5 outline-none placeholder-netflix-text"
             />
-            {searchQuery && (
+            {(onSearchChange ? searchQuery : localQuery) && (
               <button
-                onClick={() => onSearchChange?.("")}
+                onClick={() => {
+                  if (onSearchChange) {
+                    onSearchChange("");
+                  } else {
+                    setLocalQuery("");
+                    navigate("/search");
+                  }
+                }}
                 className="absolute right-2 text-netflix-text hover:text-white"
               >
                 <svg
@@ -253,14 +296,35 @@ export default function Navbar({ searchQuery = "", onSearchChange }) {
           )}
         </div>
 
-        {/* ── Avatar ── */}
-        <div className="w-8 h-8 rounded bg-primary cursor-pointer overflow-hidden">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            alt="avatar"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        {/* ── Auth : Connexion / Déconnexion ── */}
+        {user ? (
+          <div className="flex items-center gap-3">
+            <span className="hidden md:inline text-sm text-netflix-light">
+              {user.name || user.email}
+            </span>
+            <button
+              onClick={handleLogout}
+              className="bg-primary hover:bg-primary-hover text-white text-xs font-bold px-4 py-1.5 rounded transition-colors"
+            >
+              Déconnexion
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2">
+            <NavLink
+              to="/login"
+              className="bg-primary hover:bg-primary-hover text-white text-xs font-bold px-4 py-1.5 rounded transition-colors"
+            >
+              Connexion
+            </NavLink>
+            <NavLink
+              to="/register"
+              className="hidden md:inline-block border border-white/30 hover:border-white text-white text-xs font-bold px-4 py-1.5 rounded transition-colors"
+            >
+              Inscription
+            </NavLink>
+          </div>
+        )}
       </div>
     </nav>
   );

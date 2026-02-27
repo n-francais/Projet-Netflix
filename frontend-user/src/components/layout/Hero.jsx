@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
 /**
@@ -12,8 +13,11 @@ import Button from "../ui/Button";
  * Props : movie { title, description, banner, year, rating, category }
  */
 export default function Hero({ movie }) {
+  const navigate = useNavigate();
+
   // Film par défaut si aucun n'est passé
   const featured = movie || {
+    id: 1,
     title: "Inception",
     description:
       "Un voleur qui s'infiltre dans les rêves des gens pour voler leurs secrets se voit offrir une chance de rédemption.",
@@ -90,7 +94,11 @@ export default function Hero({ movie }) {
               </svg>
               Lecture
             </Button>
-            <Button variant="secondary" size="lg">
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => navigate(`/movie/${featured.id}`)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"

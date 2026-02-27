@@ -1,13 +1,7 @@
 import { useRef, useState } from "react";
 import MovieCard from "./MovieCard";
 
-/**
- * MovieRow — Carrousel horizontal de films style Netflix
- *
- * Utilise group-hover pour révéler les flèches de navigation.
- * Scroll natif avec snap-x + scroll smooth.
- * Le titre de la catégorie se décale au hover de la section.
- */
+
 export default function MovieRow({ title, movies = [] }) {
   const rowRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);
