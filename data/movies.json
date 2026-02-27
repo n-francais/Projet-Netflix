@@ -8,8 +8,8 @@
     "director": "Christopher Nolan",
     "duration": 148,
     "rating": 8.8,
-    "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEhnivolCNRQv.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/s3TBrRGB1iav7gFOCNx3H31MoES.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/aej3LRUga5rhgkmRP6XMFw3ejbl.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg"
   },
   {
     "id": 2,
@@ -19,9 +19,9 @@
     "category": "Action",
     "director": "Christopher Nolan",
     "duration": 152,
-    "rating": 9.0,
-    "image": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911BTUgMe1nNaD.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg"
+    "rating": 9,
+    "image": "https://image.tmdb.org/t/p/w500/pyNXnq8QBWoK3b37RS6C3axwUOy.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/dqK9Hag1054tghRQSqLSfrkvQnA.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "duration": 169,
     "rating": 8.6,
     "image": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/2ssWTSVklAEc98frZUQhgtGHx7s.jpg"
   },
   {
     "id": 4,
@@ -81,7 +81,7 @@
     "duration": 132,
     "rating": 8.5,
     "image": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/TU9ISUhPTKbjoxAJ22z5MOHsEcR.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg"
   },
   {
     "id": 8,
@@ -105,7 +105,7 @@
     "duration": 155,
     "rating": 8.5,
     "image": "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/hND1WGFC5medEdmDLMzlFbHMLqM.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/jhk6D8pim3yaByu1801kMoxXFaX.jpg"
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "duration": 138,
     "rating": 8.2,
     "image": "https://image.tmdb.org/t/p/w500/4GDy0PHYX3VRXUtwK5ysFbg3kEx.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/jHlQEHHMXyAHbOjlkMi6GweUqJv.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/8xt8AMb1OKC63AdhNSaYBWxB4Iq.jpg"
   },
   {
     "id": 11,
@@ -127,7 +127,7 @@
     "category": "Science-Fiction",
     "director": "Denis Villeneuve",
     "duration": 164,
-    "rating": 8.0,
+    "rating": 8,
     "image": "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
     "banner": "https://image.tmdb.org/t/p/original/sAtoMqDVhNDQBc3QJL3RF6hlhGq.jpg"
   },
@@ -139,7 +139,7 @@
     "category": "Science-Fiction",
     "director": "Denis Villeneuve",
     "duration": 155,
-    "rating": 8.0,
+    "rating": 8,
     "image": "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
     "banner": "https://image.tmdb.org/t/p/original/jYEW5xZkZk2WTrdbMGAPFuBqbDc.jpg"
   },
@@ -152,8 +152,8 @@
     "director": "Alfonso Cuarón",
     "duration": 91,
     "rating": 7.7,
-    "image": "https://image.tmdb.org/t/p/w500/kZ2nZw8dp0azJMEUaWe44TCdoMg.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/tUAHdWfDBFiGvRCv9JRSfJE5vkP.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/cPrUo65h0CDXsAB9t3yL6wfv6j1.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/a2n6bKD7qhCPCAEALgsAhWOAQcc.jpg"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "duration": 120,
     "rating": 8.1,
     "image": "https://image.tmdb.org/t/p/w500/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/phszHPFVhKz0EFnN22hLOa7SGIT.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/l0eIS009XtEO80aC6zjM3o3AkEl.jpg"
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@
     "duration": 101,
     "rating": 7.4,
     "image": "https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/umC04Cozevu8nn3JTDJ1pc7PVTn.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/ff2ti5DkA9UYLzyqhQfI2kZqEuh.jpg"
   },
   {
     "id": 16,
@@ -188,8 +188,8 @@
     "director": "Joseph Kosinski",
     "duration": 130,
     "rating": 8.3,
-    "image": "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DG163pi.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/AaV1YIdWKhpGkMG0OyoHUiMlBSv.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/uuwi4wwG6HAHVqaEvJDx6gI773N.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg"
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@
     "duration": 147,
     "rating": 7.7,
     "image": "https://image.tmdb.org/t/p/w500/AkJQpZp9WoNdj7pLYSj1L0RcMMN.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/6sekR0cPAOeIVWVLW0GFlNp9tFz.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/5jnoAA74Qwb5w6B9FMvnc20n6Ie.jpg"
   },
   {
     "id": 18,
@@ -212,8 +212,8 @@
     "director": "David Fincher",
     "duration": 149,
     "rating": 8.1,
-    "image": "https://image.tmdb.org/t/p/w500/lv5xShBIDPe4O1gMEFcfatAxsOl.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/55gDVzNLkLZMnDjD6sjEEdFmJOI.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/7xkJ1ACu40BjzLHVPRILWjFvW7.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg"
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@
     "duration": 127,
     "rating": 8.6,
     "image": "https://image.tmdb.org/t/p/w500/6yoghtyTpznpBik8EngEmJskVUO.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/tFkuTmuGHfxDOGnksAoaGjfAQUV.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/iwgl8zlrrfvfWp9k9Paj8lvFEvS.jpg"
   },
   {
     "id": 20,
@@ -236,8 +236,8 @@
     "director": "David Fincher",
     "duration": 157,
     "rating": 7.7,
-    "image": "https://image.tmdb.org/t/p/w500/vLRIhFCFZlBLM0TF1WDpSuwMklB.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/6mKgcAHTOkiiiIDpxXwqWOQInRW.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/ajHaO6hqFmvRNsUh3BIFwE5ghsI.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/3zCPI4JFc54xvLaJ71oI2KoP3az.jpg"
   },
   {
     "id": 21,
@@ -248,8 +248,8 @@
     "director": "Jonathan Demme",
     "duration": 118,
     "rating": 8.6,
-    "image": "https://image.tmdb.org/t/p/w500/uS9m8OBk1RVfUPbegvMIoMJpXyF.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/mfwq2nMBVwqFWXBrHoJqJaQFVBQ.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/sSQDxwm4r28YpJSQVyVOtpYVs0E.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/aYcnDyLMnpKce1FOYUpZrXtgUye.jpg"
   },
   {
     "id": 22,
@@ -271,7 +271,7 @@
     "category": "Drame",
     "director": "Steven Spielberg",
     "duration": 195,
-    "rating": 9.0,
+    "rating": 9,
     "image": "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
     "banner": "https://image.tmdb.org/t/p/original/zb6fM1CX41D9rF9hdgclu0peUmy.jpg"
   },
@@ -284,8 +284,8 @@
     "director": "David Fincher",
     "duration": 139,
     "rating": 8.8,
-    "image": "https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QI4S2t0POoT.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/hZkgoQYus5dXo3H8T7Uef6DNknx.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/t1i10ptOivG4hV7erkX3tmKpiqm.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/c6OLXfKAk5BKeR6broC8pYiCquX.jpg"
   },
   {
     "id": 25,
@@ -297,7 +297,7 @@
     "duration": 189,
     "rating": 8.6,
     "image": "https://image.tmdb.org/t/p/w500/velWPhVMQeQKcxggNEU8YmIo52R.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/Rlt20sEbOQKPVjia7lUilFm49f8.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/b6HWTOxn1xevvyHU2K9ICvaRU6g.jpg"
   },
   {
     "id": 26,
@@ -309,7 +309,7 @@
     "duration": 106,
     "rating": 8.5,
     "image": "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/6bbZ6XlDfixmCOEEvriygCkLdOH.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/wbQa0EnWUyRzQ5d1pHLNRlmsCUP.jpg"
   },
   {
     "id": 27,
@@ -321,7 +321,7 @@
     "duration": 179,
     "rating": 8.8,
     "image": "https://image.tmdb.org/t/p/w500/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/bJYASWAnUHCGnlCO3AEnbXnJdQa.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg"
   },
   {
     "id": 28,
@@ -331,7 +331,7 @@
     "category": "Fantastique",
     "director": "Peter Jackson",
     "duration": 201,
-    "rating": 9.0,
+    "rating": 9,
     "image": "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
     "banner": "https://image.tmdb.org/t/p/original/lXhgCODAbBXL5buk9yEmTpOoOgR.jpg"
   },
@@ -356,8 +356,8 @@
     "director": "Guillermo del Toro",
     "duration": 118,
     "rating": 8.2,
-    "image": "https://image.tmdb.org/t/p/w500/v0gqjLt6KPXrq6MH4Gv1OJnKZqk.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/sB7bZoRUveHbHNOa5csLEeZ14wp.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/bpzGLrQC5nXvU3wrLtp1TDIKYX9.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/6G6nqSW9S7EHA9HrYl0Z8uo2H7f.jpg"
   },
   {
     "id": 31,
@@ -368,8 +368,8 @@
     "director": "Rob Reiner",
     "duration": 98,
     "rating": 8.1,
-    "image": "https://image.tmdb.org/t/p/w500/gpMzmua9EEi6t0GS5mEB3CiKLnr.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/aVTKfxGqHer4soh4y3TOUela3eB.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/cXzBtvaJE6cCKYcCvUUnArYsZ2y.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/2CisgvF2HcIVnbMZbSjASCtSgEb.jpg"
   },
   {
     "id": 32,
@@ -380,8 +380,8 @@
     "director": "Olivier Nakache, Éric Toledano",
     "duration": 112,
     "rating": 8.5,
-    "image": "https://image.tmdb.org/t/p/w500/323BP0itpBCvmDJkHSIPeMJBMgJ.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/mSWfCBEAMXJMPN4SnwVTXfZn3pp.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/i97FM40bOMKvKIo3hjQviETE5yf.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/5ATSg3rufgIMfcrHd2gEi678hZu.jpg"
   },
   {
     "id": 33,
@@ -392,8 +392,8 @@
     "director": "Wes Anderson",
     "duration": 99,
     "rating": 8.1,
-    "image": "https://image.tmdb.org/t/p/w500/eWDyMq3leVJsm2c5v6JhlVnuZ5B.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/nX5XotM9yprCKarRH4fzOq1VM4s.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/9udCLTxTFl28RxnK8Q05E154ZGa.jpg"
   },
   {
     "id": 34,
@@ -404,8 +404,8 @@
     "director": "Francis Veber",
     "duration": 80,
     "rating": 7.7,
-    "image": "https://image.tmdb.org/t/p/w500/cLBdo2FkLQl4amFGNbyXSiEwqPi.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/2hPp3TvhUXdLDJBPvmBXb3tCdQB.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/ogjed6gHn7o35i8Fo72DuXvDppa.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/pbVVDPRrcnsvFjujgHjpFktRFbg.jpg"
   },
   {
     "id": 35,
@@ -417,7 +417,7 @@
     "duration": 113,
     "rating": 7.6,
     "image": "https://image.tmdb.org/t/p/w500/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/p4SxNVKCOVBiIFSziiOqFDyOcYP.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/giYuvpmpZbwkT3NtX4WdNYqGhxw.jpg"
   },
   {
     "id": 36,
@@ -428,8 +428,8 @@
     "director": "Michel Hazanavicius",
     "duration": 99,
     "rating": 7.2,
-    "image": "https://image.tmdb.org/t/p/w500/fJRYSiF3VcAToVRVjVkjlMHmFxu.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/z2oT06x36FkdNjXEVYYTPjI7XGF.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/jGmP6s2vImo1JEsfCBAkmZmFNnD.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/bMOZ9yozD9FyFGwFhOegZoux0QN.jpg"
   },
   {
     "id": 37,
@@ -440,8 +440,8 @@
     "director": "Jordan Peele",
     "duration": 104,
     "rating": 7.7,
-    "image": "https://image.tmdb.org/t/p/w500/qGZIJIB8ZfGPNAEp6knQEOBsKan.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/a6Uth9PGUsLULTHOuGbueT4cJ0T.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/8WzjAhgc4HvpN3Y6LLCc6AbpIhF.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg"
   },
   {
     "id": 38,
@@ -452,8 +452,8 @@
     "director": "Ari Aster",
     "duration": 127,
     "rating": 7.3,
-    "image": "https://image.tmdb.org/t/p/w500/p9fmuz2Oj3HtEWMNrGiez3Bz7Mw.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/5GbkL1UBOoPjtS1fqjPGxIeX5Gs.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/5Bz0u7xEyOUnGi4ov3rZKqKYCuH.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg"
   },
   {
     "id": 39,
@@ -465,7 +465,7 @@
     "duration": 112,
     "rating": 7.5,
     "image": "https://image.tmdb.org/t/p/w500/wVYREutTvI2tmxr6ujrHT704wGF.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/bSqt9rhDZibrMYoFMThIjechHYj.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/aQCCpAIdWAp6wyFgjMry4okwrZo.jpg"
   },
   {
     "id": 40,
@@ -477,7 +477,7 @@
     "duration": 90,
     "rating": 7.5,
     "image": "https://image.tmdb.org/t/p/w500/nAU74GmpUk7t5iklEp3bufwDq4n.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/roYyPiQDQKmIKUEhO912q72qoef.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/xvPsewFauNC5xZJxHGmtFN5htDh.jpg"
   },
   {
     "id": 41,
@@ -537,7 +537,7 @@
     "duration": 134,
     "rating": 8.4,
     "image": "https://image.tmdb.org/t/p/w500/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/feFSwADQ0sUCblPoJN0ONee31Kp.jpg"
+    "banner": "https://image.tmdb.org/t/p/original/gl0jzn4BupSbL2qMVeqrjKkF9Js.jpg"
   },
   {
     "id": 46,
@@ -548,7 +548,7 @@
     "director": "Makoto Shinkai",
     "duration": 106,
     "rating": 8.4,
-    "image": "https://image.tmdb.org/t/p/w500/q719jXXEhI1THrNioCUf8WBRPow.jpg",
-    "banner": "https://image.tmdb.org/t/p/original/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg"
+    "image": "https://image.tmdb.org/t/p/w500/zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/8x9iKH8kWA0zdkgNdpAew7OstYe.jpg"
   }
 ]

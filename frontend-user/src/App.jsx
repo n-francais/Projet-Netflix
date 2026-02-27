@@ -22,7 +22,6 @@ function App() {
   // ─── State : simulation de chargement async ────────────
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showCatalogue, setShowCatalogue] = useState(false);
 
   // ─── useEffect : "charge" les données au montage ───────
   useEffect(() => {
@@ -98,6 +97,9 @@ function App() {
           </div>
         )}
 
+        {/* ── Composant Home (TP04) : MovieFilter → filteredMovies → MovieList ── */}
+        <Home />
+
         {/* Résultats de recherche en grille */}
         {isSearching ? (
           filteredMovies.length > 0 ? (
@@ -131,22 +133,6 @@ function App() {
             />
           </>
         )}
-
-        {/* ── Bouton toggle Catalogue (TP04 : Home + MovieFilter + MovieList) ── */}
-        <div className="px-4 md:px-12 py-8">
-          <button
-            onClick={() => setShowCatalogue((prev) => !prev)}
-            className="px-6 py-2 bg-primary hover:bg-primary-hover text-white font-semibold
-                       rounded transition-colors duration-200 cursor-pointer"
-          >
-            {showCatalogue
-              ? "Masquer le catalogue"
-              : "📋 Voir le catalogue filtrable"}
-          </button>
-        </div>
-
-        {/* ── Composant Home (TP04) : MovieFilter → filteredMovies → MovieList ── */}
-        {showCatalogue && <Home />}
       </div>
 
       {/* ── Footer ── */}
