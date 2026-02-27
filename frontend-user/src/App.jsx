@@ -1,52 +1,155 @@
+import { useState, useEffect, useMemo } from "react";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/layout/Hero";
 import MovieRow from "./components/movies/MovieRow";
-import moviesData from "../../data/movies.json";
+import Home from "./pages/Home";
+import useSearch from "./hooks/useSearch";
+import rawMovies from "../../data/movies.json";
 
 /**
- * App — Page d'accueil Netflix Clone
+ * App — Page d'accueil Netflix Clone (TP04 — dynamique)
  *
- * Structure :
- *  1. Navbar fixe transparente
- *  2. HeroBanner avec film vedette
- *  3. Carrousels par catégories (générés dynamiquement depuis movies.json)
+ * Hooks utilisés :
+ *  - useState  : movies (données chargées), loading, showCatalogue (toggle vue)
+ *  - useEffect : simule le chargement async depuis movies.json + log
+ *  - useMemo   : categories dérivées (regroupement par catégorie)
+ *  - useSearch : hook custom — query, filteredMovies, isSearching
+ *
+ * Intègre le composant Home (TP04) : filtrage MovieFilter → MovieList
+ * Le CartProvider est wrappé dans main.jsx.
  */
 function App() {
-  // Film vedette = premier film ou celui avec la meilleur note
-  const featuredMovie = moviesData.reduce((best, movie) =>
-    movie.rating > best.rating ? movie : best,
+  // ─── State : simulation de chargement async ────────────
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showCatalogue, setShowCatalogue] = useState(false);
+
+  // ─── useEffect : "charge" les données au montage ───────
+  useEffect(() => {
+    // Simule un fetch réseau avec un petit délai
+    const timer = setTimeout(() => {
+      setMovies(rawMovies);
+      setLoading(false);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // ─── useEffect : log pour debug ────────────────────────
+  useEffect(() => {
+    if (!loading) {
+      console.log(`📦 ${movies.length} films chargés`);
+    }
+  }, [movies, loading]);
+
+  // ─── Hook de recherche ─────────────────────────────────
+  const { query, setQuery, filteredMovies, isSearching } = useSearch(movies);
+
+  // ─── Film vedette = meilleure note (useMemo) ───────────
+  const featuredMovie = useMemo(
+    () =>
+      movies.length
+        ? movies.reduce((best, movie) =>
+            movie.rating > best.rating ? movie : best,
+          )
+        : null,
+    [movies],
   );
 
-  // Regrouper les films par catégorie
-  const categories = moviesData.reduce((acc, movie) => {
-    if (!acc[movie.category]) acc[movie.category] = [];
-    acc[movie.category].push(movie);
-    return acc;
-  }, {});
+  // ─── Catégories regroupées (useMemo) ───────────────────
+  const categories = useMemo(
+    () =>
+      filteredMovies.reduce((acc, movie) => {
+        const { category } = movie; // destructuring
+        if (!acc[category]) acc[category] = [];
+        acc[category].push(movie);
+        return acc;
+      }, {}),
+    [filteredMovies],
+  );
+
+  // ─── Écran de chargement ───────────────────────────────
+  if (loading) {
+    return (
+      <div className="bg-netflix-black min-h-screen flex items-center justify-center">
+        <div className="text-center animate-fade-in">
+          <h1 className="text-primary text-5xl font-bold mb-4">NETFLIX</h1>
+          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-netflix-black min-h-screen text-white font-sans">
-      <Navbar />
+      <Navbar searchQuery={query} onSearchChange={setQuery} />
       <Hero movie={featuredMovie} />
 
-      {/* Carrousels de films par catégorie */}
+      {/* ── Zone de résultats ── */}
       <div className="-mt-32 relative z-10">
-        {/* Premier carrousel : tous les films (Tendances) */}
-        <MovieRow title="Tendances actuelles" movies={moviesData} />
+        {/* Indicateur de recherche active */}
+        {isSearching && (
+          <div className="px-4 md:px-12 pt-4 pb-2">
+            <p className="text-netflix-text text-sm">
+              {filteredMovies.length} résultat
+              {filteredMovies.length !== 1 ? "s" : ""} pour{" "}
+              <span className="text-white font-semibold">"{query}"</span>
+            </p>
+          </div>
+        )}
 
-        {/* Carrousels par catégorie */}
-        {Object.entries(categories).map(([category, movies]) => (
-          <MovieRow key={category} title={category} movies={movies} />
-        ))}
+        {/* Résultats de recherche en grille */}
+        {isSearching ? (
+          filteredMovies.length > 0 ? (
+            <MovieRow title="Résultats de recherche" movies={filteredMovies} />
+          ) : (
+            <div className="px-4 md:px-12 py-20 text-center">
+              <p className="text-2xl font-bold mb-2">Aucun résultat</p>
+              <p className="text-netflix-text">
+                Essayez avec d'autres mots-clés (titre, genre, réalisateur)
+              </p>
+            </div>
+          )
+        ) : (
+          <>
+            {/* Carrousel tendances (tous les films) */}
+            <MovieRow title="Tendances actuelles" movies={movies} />
 
-        {/* Carrousel top rated */}
-        <MovieRow
-          title="Les mieux notés"
-          movies={[...moviesData].sort((a, b) => b.rating - a.rating)}
-        />
+            {/* Carrousels par catégorie */}
+            {Object.entries(categories).map(([category, categoryMovies]) => (
+              <MovieRow
+                key={category}
+                title={category}
+                movies={categoryMovies}
+              />
+            ))}
+
+            {/* Carrousel top rated */}
+            <MovieRow
+              title="Les mieux notés"
+              movies={[...movies].sort((a, b) => b.rating - a.rating)}
+            />
+          </>
+        )}
+
+        {/* ── Bouton toggle Catalogue (TP04 : Home + MovieFilter + MovieList) ── */}
+        <div className="px-4 md:px-12 py-8">
+          <button
+            onClick={() => setShowCatalogue((prev) => !prev)}
+            className="px-6 py-2 bg-primary hover:bg-primary-hover text-white font-semibold
+                       rounded transition-colors duration-200 cursor-pointer"
+          >
+            {showCatalogue
+              ? "Masquer le catalogue"
+              : "📋 Voir le catalogue filtrable"}
+          </button>
+        </div>
+
+        {/* ── Composant Home (TP04) : MovieFilter → filteredMovies → MovieList ── */}
+        {showCatalogue && <Home />}
       </div>
 
-      {/* Footer minimal */}
+      {/* ── Footer ── */}
       <footer className="px-4 md:px-12 py-12 text-netflix-text text-xs">
         <div className="max-w-5xl mx-auto">
           <p className="mb-4">Des questions ? Appelez le 0800-Netflix</p>
