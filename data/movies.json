@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "description": "Un voleur qui s'infiltre dans les rêves des gens pour voler leurs secrets se voit offrir une chance de rédemption.",
+    "year": 2010,
+    "category": "Science-Fiction",
+    "director": "Christopher Nolan",
+    "duration": 148,
+    "rating": 8.8,
+    "image": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEhnivolCNRQv.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/s3TBrRGB1iav7gFOCNx3H31MoES.jpg"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "description": "Batman doit accepter l'une des plus grandes épreuves psychologiques et physiques de sa capacité à combattre l'injustice.",
+    "year": 2008,
+    "category": "Action",
+    "director": "Christopher Nolan",
+    "duration": 152,
+    "rating": 9.0,
+    "image": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911BTUgMe1nNaD.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "description": "Une équipe d'explorateurs voyage à travers un trou de ver dans l'espace pour assurer la survie de l'humanité.",
+    "year": 2014,
+    "category": "Science-Fiction",
+    "director": "Christopher Nolan",
+    "duration": 169,
+    "rating": 8.6,
+    "image": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK1DVfjko.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Pulp Fiction",
+    "description": "Les vies de deux tueurs à gages, d'un boxeur, d'un gangster et de sa femme s'entremêlent dans quatre histoires de violence et de rédemption.",
+    "year": 1994,
+    "category": "Thriller",
+    "director": "Quentin Tarantino",
+    "duration": 154,
+    "rating": 8.9,
+    "image": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Forrest Gump",
+    "description": "Les présidences de Kennedy et Johnson, la guerre du Vietnam, le scandale du Watergate et d'autres événements se déroulent à travers les yeux d'un homme de l'Alabama.",
+    "year": 1994,
+    "category": "Drame",
+    "director": "Robert Zemeckis",
+    "duration": 142,
+    "rating": 8.8,
+    "image": "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/7c9UVPPiTPltouxRVY6N9uugaVA.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Matrix",
+    "description": "Un hacker informatique découvre la vraie nature de sa réalité et son rôle dans la guerre contre ses contrôleurs.",
+    "year": 1999,
+    "category": "Science-Fiction",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "duration": 136,
+    "rating": 8.7,
+    "image": "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/fNG7i7RqMErkcqhohV2a6cV1Ehy.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Parasite",
+    "description": "Toute la famille de Ki-taek est au chômage. Elle s'intéresse au mode de vie de la richissime famille Park.",
+    "year": 2019,
+    "category": "Thriller",
+    "director": "Bong Joon-ho",
+    "duration": 132,
+    "rating": 8.5,
+    "image": "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/TU9ISUhPTKbjoxAJ22z5MOHsEcR.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Le Seigneur des Anneaux : La Communauté de l'Anneau",
+    "description": "Un jeune hobbit doit détruire un anneau maléfique pour sauver la Terre du Milieu.",
+    "year": 2001,
+    "category": "Fantastique",
+    "director": "Peter Jackson",
+    "duration": 178,
+    "rating": 8.8,
+    "image": "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/x2RS3uTcsJJ9IfjNPcgDmukoEcQ.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Gladiator",
+    "description": "Un ancien général romain se venge de l'empereur corrompu qui a assassiné sa famille et l'a envoyé en esclavage.",
+    "year": 2000,
+    "category": "Action",
+    "director": "Ridley Scott",
+    "duration": 155,
+    "rating": 8.5,
+    "image": "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/hND1WGFC5medEdmDLMzlFbHMLqM.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Shutter Island",
+    "description": "En 1954, un marshal américain enquête sur la disparition d'une meurtrière qui s'est échappée d'un hôpital pour criminels aliénés.",
+    "year": 2010,
+    "category": "Thriller",
+    "director": "Martin Scorsese",
+    "duration": 138,
+    "rating": 8.2,
+    "image": "https://image.tmdb.org/t/p/w500/4GDy0PHYX3VRXUtwK5ysFbg3kEx.jpg",
+    "banner": "https://image.tmdb.org/t/p/original/jHlQEHHMXyAHbOjlkMi6GweUqJv.jpg"
+  }
+]

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <%- include('partials/header') %>
+
+  <main class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold mb-6">Dashboard</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-800 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-400">Total Films</h3>
+        <p class="text-4xl font-bold mt-2">0</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-400">Catégories</h3>
+        <p class="text-4xl font-bold mt-2">0</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-400">Utilisateurs</h3>
+        <p class="text-4xl font-bold mt-2">0</p>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
