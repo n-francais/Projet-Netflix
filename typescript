@@ -1,0 +1,91 @@
+Script started on Fri Feb 27 11:38:53 2026
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  cd /Users/francaisnina/Do [Kccuments/IUT/BUT2/R4.10/Projet_Netflix/Projet-Netflix[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/fix_tmdb.js[?2004l
+ID3|poster:1pnigkWWy8W032o9TKDneBa3eVK.jpg|backdrop:2ssWTSVklAEc98frZUQhgtGHx7s.jpg
+node:internal/url:828
+      href = bindingUrl.parse(input, base, true);
+                        ^
+
+TypeError: Invalid URL
+[90m    at new URL (node:internal/url:828:25)[39m
+[90m    at new ClientRequest (node:_http_client:196:30)[39m
+[90m    at request (node:http:102:10)[39m
+[90m    at Object.get (node:http:113:15)[39m
+    at doRequest (/private/tmp/fix_tmdb.js:34:11)
+    at ClientRequest.<anonymous> (/private/tmp/fix_tmdb.js:36:18)
+[90m    at Object.onceWrapper (node:events:623:26)[39m
+[90m    at ClientRequest.emit (node:events:508:28)[39m
+[90m    at HTTPParser.parserOnIncomingClient [as onIncoming] (node:_http_client:780:27)[39m
+[90m    at HTTPParser.parserOnHeadersComplete (node:_http_common:123:17)[39m {
+  code: [32m'ERR_INVALID_URL'[39m,
+  input: [32m'/movie/496243'[39m
+}
+
+Node.js v25.2.1
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/fix_tmdb.js[?2004l
+ID3|poster:1pnigkWWy8W032o9TKDneBa3eVK.jpg|backdrop:2ssWTSVklAEc98frZUQhgtGHx7s.jpg
+ID7|poster:7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg|backdrop:hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg
+ID9|poster:5gJOu3t2QrznuJqjCG7FQDMI76t.jpg|backdrop:jhk6D8pim3yaByu1801kMoxXFaX.jpg
+ID10|poster:fQ0vGVTtxjCdAJnxwPZ88O3Wzrh.jpg|backdrop:8xt8AMb1OKC63AdhNSaYBWxB4Iq.jpg
+ID14|poster:oLy2V6AWSEfdPgKOtrSGnwB3Q2R.jpg|backdrop:l0eIS009XtEO80aC6zjM3o3AkEl.jpg
+ID15|poster:orB4dHfZ9rOJbKYow7W0etezchl.jpg|backdrop:ff2ti5DkA9UYLzyqhQfI2kZqEuh.jpg
+ID17|poster:6JO3Oz685phBaADyJtf4wmaafYj.jpg|backdrop:5jnoAA74Qwb5w6B9FMvnc20n6Ie.jpg
+ID19|poster:upIOOLVeOoUkTM5fVWwXW2JmBrW.jpg|backdrop:iwgl8zlrrfvfWp9k9Paj8lvFEvS.jpg
+ID25|poster:cRBUYC02CPsVa1GqBq6rfHn5a8g.jpg|backdrop:b6HWTOxn1xevvyHU2K9ICvaRU6g.jpg
+ID26|poster:3XriEpTdnplQRzyphAC0cu3emns.jpg|backdrop:wbQa0EnWUyRzQ5d1pHLNRlmsCUP.jpg
+ID27|poster:qVHBqQYLDRs7ESjP9q6o9iPHLWj.jpg|backdrop:kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg
+ID32|poster:i97FM40bOMKvKIo3hjQviETE5yf.jpg|backdrop:5ATSg3rufgIMfcrHd2gEi678hZu.jpg
+ID33|poster:qcWTuWPu6x6t2MKt0MTfbResJiV.jpg|backdrop:9udCLTxTFl28RxnK8Q05E154ZGa.jpg
+ID34|poster:ogjed6gHn7o35i8Fo72DuXvDppa.jpg|backdrop:pbVVDPRrcnsvFjujgHjpFktRFbg.jpg
+ID35|poster:utqCnOBNRpuEgMSI596cPfhUYjY.jpg|backdrop:giYuvpmpZbwkT3NtX4WdNYqGhxw.jpg
+ID36|poster:jGmP6s2vImo1JEsfCBAkmZmFNnD.jpg|backdrop:bMOZ9yozD9FyFGwFhOegZoux0QN.jpg
+ID37|poster:8WzjAhgc4HvpN3Y6LLCc6AbpIhF.jpg|backdrop:o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg
+ID38|poster:5Bz0u7xEyOUnGi4ov3rZKqKYCuH.jpg|backdrop:gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg
+ID39|poster:vOnTvcSsxdJWL9xgauljHHmFSN4.jpg|backdrop:aQCCpAIdWAp6wyFgjMry4okwrZo.jpg
+ID40|poster:S3PKmsBviNmXDYmik7uanIqpzD.jpg|backdrop:xvPsewFauNC5xZJxHGmtFN5htDh.jpg
+ID45|poster:1AfSDxBTYYtQRVY2V1ISgxXNPVx.jpg|backdrop:gl0jzn4BupSbL2qMVeqrjKkF9Js.jpg
+ID46|poster:zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg|backdrop:8x9iKH8kWA0zdkgNdpAew7OstYe.jpg
+^C
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  echo "waiting for complet [Kiion"[?2004l
+waiting for completion
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/fix_tmdb2.js[?2004l
+ID33|poster:qcWTuWPu6x6t2MKt0MTfbResJiV.jpg|backdrop:9udCLTxTFl28RxnK8Q05E154ZGa.jpg
+ID34|poster:ogjed6gHn7o35i8Fo72DuXvDppa.jpg|backdrop:pbVVDPRrcnsvFjujgHjpFktRFbg.jpg
+ID35|poster:utqCnOBNRpuEgMSI596cPfhUYjY.jpg|backdrop:giYuvpmpZbwkT3NtX4WdNYqGhxw.jpg
+ID36|poster:jGmP6s2vImo1JEsfCBAkmZmFNnD.jpg|backdrop:bMOZ9yozD9FyFGwFhOegZoux0QN.jpg
+ID37|poster:8WzjAhgc4HvpN3Y6LLCc6AbpIhF.jpg|backdrop:o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg
+ID38|poster:5Bz0u7xEyOUnGi4ov3rZKqKYCuH.jpg|backdrop:gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg
+ID39|poster:vOnTvcSsxdJWL9xgauljHHmFSN4.jpg|backdrop:aQCCpAIdWAp6wyFgjMry4okwrZo.jpg
+ID40|poster:S3PKmsBviNmXDYmik7uanIqpzD.jpg|backdrop:xvPsewFauNC5xZJxHGmtFN5htDh.jpg
+ID45|poster:1AfSDxBTYYtQRVY2V1ISgxXNPVx.jpg|backdrop:gl0jzn4BupSbL2qMVeqrjKkF9Js.jpg
+ID46|poster:zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg|backdrop:8x9iKH8kWA0zdkgNdpAew7OstYe.jpg
+^C
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  echo "done?"[?2004l
+done?
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/fix_tmdb3.js[?2004l
+ID38|poster:5Bz0u7xEyOUnGi4ov3rZKqKYCuH.jpg|backdrop:gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg
+ID39|poster:vOnTvcSsxdJWL9xgauljHHmFSN4.jpg|backdrop:aQCCpAIdWAp6wyFgjMry4okwrZo.jpg
+ID40|poster:S3PKmsBviNmXDYmik7uanIqpzD.jpg|backdrop:xvPsewFauNC5xZJxHGmtFN5htDh.jpg
+ID45|poster:1AfSDxBTYYtQRVY2V1ISgxXNPVx.jpg|backdrop:gl0jzn4BupSbL2qMVeqrjKkF9Js.jpg
+ID46|poster:zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg|backdrop:8x9iKH8kWA0zdkgNdpAew7OstYe.jpg
+^C
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/apply_fixes.js[?2004l
+Fixed 17 images and 32 banners.
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/verify_urls.js[?2004l
+ALL 46 images and 46 banners are working! (HTTP 200)
+^C
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  echo "checking output"[?2004l
+checking output
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  node /tmp/verify_curl.js[?2004l
+ALL URLs OK!
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h  echo "done"[?2004l
+done
+[1m[7m%[27m[1m[0m                                                                                [0m[27m[24m[Jfrancaisnina@MacBook-Air-de-Francais Projet-Netflix % [K[?2004h
