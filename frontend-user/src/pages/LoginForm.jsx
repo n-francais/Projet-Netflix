@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 export default function LoginForm() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
   const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
@@ -28,20 +31,17 @@ export default function LoginForm() {
       return;
     }
     setLoading(true);
-    // Simulation de connexion
-    setTimeout(() => {
-      // Sauvegarde locale de l'utilisateur (temporaire)
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          email: formData.email,
-          name: formData.email.split("@")[0],
-        }),
-      );
-      setLoading(false);
-      // Redirection vers la page d'accueil
+    setApiError("");
+
+    const result = await login(formData.email, formData.password);
+
+    if (result.success) {
       navigate("/");
-    }, 1000);
+    } else {
+      setApiError(result.error || "Erreur lors de la connexion");
+    }
+
+    setLoading(false);
   };
 
   const handleBlur = (field) => {
@@ -66,6 +66,12 @@ export default function LoginForm() {
       {/* Formulaire */}
       <div className="border border-white/20 rounded-lg p-8 w-full max-w-md">
         <h2 className="text-white text-2xl font-bold mb-6">Se connecter</h2>
+
+        {apiError && (
+          <div className="bg-primary/20 border border-primary text-primary px-4 py-3 rounded mb-4">
+            {apiError}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} noValidate>
           {/* Email */}
@@ -104,7 +110,7 @@ export default function LoginForm() {
             disabled={loading}
             className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded transition-colors disabled:opacity-60"
           >
-            {loading ? "Connexion en cours…" : "Se connecter"}
+            {loading ? "Connexion en cours..." : "Se connecter"}
           </button>
         </form>
 

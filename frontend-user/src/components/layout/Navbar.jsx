@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useCart } from "../../context/CartContext";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
 
 export default function Navbar({ searchQuery = "", onSearchChange }) {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function Navbar({ searchQuery = "", onSearchChange }) {
   const { cart, cartCount, handleRemoveFromCart, clearCart } = useCart();
   const searchRef = useRef(null);
   const cartRef = useRef(null);
+  const { theme, toggleTheme } = useTheme();
 
   // ─── Scroll listener (useEffect propre) ────────────────
   useEffect(() => {
@@ -66,6 +68,9 @@ export default function Navbar({ searchQuery = "", onSearchChange }) {
           : "bg-gradient-to-b from-black/80 to-transparent"
       }`}
     >
+      <div className={theme === "dark" ? "bg-black" : "bg-white"}>
+        <button onClick={toggleTheme}> Changer le thème</button>
+      </div>
       {/* ── Logo + Liens ────────────────────────── */}
       <div className="flex items-center gap-8">
         <h1 className="text-primary text-3xl font-bold tracking-wider cursor-pointer">

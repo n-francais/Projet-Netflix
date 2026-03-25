@@ -1,11 +1,18 @@
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 function ProtectedRoute({ children }) {
-  // Pour l'instant, on simule avec localStorage
-  // plus tard on utilisera Context API
-  const isAuthenticated = localStorage.getItem("user") !== null;
+  const { isAuthenticated, loading } = useAuth();
 
-  if (!isAuthenticated) {
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-netflix-black text-white flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!isAuthenticated()) {
     return <Navigate to="/login" replace />;
   }
 

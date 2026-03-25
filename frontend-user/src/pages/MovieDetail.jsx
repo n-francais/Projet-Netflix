@@ -2,83 +2,63 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Breadcrumb from "../components/common/Breadcrumb";
-import { useCart } from "../context/CartContext";
-import allMoviesData from "../../../data/movies.json";
+import { useAuth } from "../context/AuthProvider";
+import { getMovieDetails, createRental } from "../services/rentalService";
 
 export default function MovieDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { handleAddToCart, isInCart } = useCart();
+  const { user, token, isAuthenticated } = useAuth();
 
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [renting, setRenting] = useState(false);
   const [notification, setNotification] = useState(null);
 
+  // Charger les détails du film
   useEffect(() => {
-    // Simule un léger délai de chargement
-    const timer = setTimeout(() => {
-      const found = allMoviesData.find((m) => String(m.id) === String(id));
-      setMovie(found || null);
-      setLoading(false);
-    }, 400);
-    return () => clearTimeout(timer);
+    const fetchMovie = async () => {
+      try {
+        const data = await getMovieDetails(id);
+        setMovie(data);
+      } catch (error) {
+        setNotification({
+          type: "error",
+          message: "Erreur lors du chargement du film",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMovie();
   }, [id]);
 
-  // ─── Effacer la notification après 3s ───────────────────
-  useEffect(() => {
-    if (notification) {
-      const timer = setTimeout(() => setNotification(null), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [notification]);
-
-  // ─── Fonction de location ──────────────────────────────
-  const handleRent = () => {
-    // Vérifier si l'utilisateur est connecté
-    const user = localStorage.getItem("user");
-    if (!user) {
+  const handleRent = async () => {
+    if (!isAuthenticated()) {
       navigate("/login");
       return;
     }
 
-    // Créer la location
-    const rental = {
-      ...movie,
-      rentalDate: new Date().toISOString(),
-      expiryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 jours
-    };
+    setRenting(true);
+    const result = await createRental(token, id, 3.99);
 
-    // Récupérer les locations existantes
-    const existingRentals = JSON.parse(localStorage.getItem("rentals") || "[]");
-
-    // Vérifier si déjà loué avec Array.some
-    const alreadyRented = existingRentals.some(
-      (r) => String(r.id) === String(movie.id),
-    );
-
-    if (alreadyRented) {
+    if (result.success) {
+      setNotification({
+        type: "success",
+        message: "Film loué avec succès !",
+      });
+      setTimeout(() => {
+        navigate("/my-rentals");
+      }, 2000);
+    } else {
       setNotification({
         type: "error",
-        message: "Vous avez déjà loué ce film",
+        message: result.error || "Erreur lors de la location",
       });
-      return;
     }
 
-    // Ajouter la nouvelle location et sauvegarder
-    existingRentals.push(rental);
-    localStorage.setItem("rentals", JSON.stringify(existingRentals));
-
-    // Ajouter aussi au panier (CartContext)
-    if (!isInCart(movie.id)) {
-      handleAddToCart(movie);
-    }
-
-    setNotification({ type: "success", message: "Film loué avec succès !" });
-
-    // Rediriger vers MyRentals après 2 secondes
-    setTimeout(() => {
-      navigate("/my-rentals");
-    }, 2000);
+    setRenting(false);
   };
 
   // ─── État : Chargement ─────────────────────────────────
@@ -142,13 +122,13 @@ export default function MovieDetail() {
       {/* ── Banner plein écran avec overlay ── */}
       <section className="relative h-[70vh] w-full overflow-hidden">
         <img
-          src={movie.banner || movie.image}
+          src={movie.banner || movie.thumbnail}
           alt={movie.title}
           className="w-full h-full object-cover"
         />
         {/* Gradients */}
-        <div className="absolute inset-0 bg-linear-to-t from-netflix-black via-netflix-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-r from-netflix-black/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-netflix-black via-netflix-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-netflix-black/70 via-transparent to-transparent" />
 
         {/* Bouton Retour */}
         <button
@@ -224,12 +204,6 @@ export default function MovieDetail() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-white/5">
-                    <td className="px-4 py-2.5 text-netflix-text font-medium">
-                      Genre
-                    </td>
-                    <td className="px-4 py-2.5">{movie.category}</td>
-                  </tr>
                   <tr className="border-b border-white/5">
                     <td className="px-4 py-2.5 text-netflix-text font-medium">
                       Réalisateur

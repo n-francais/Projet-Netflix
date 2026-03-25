@@ -4,6 +4,7 @@ import {
   useState,
   useEffect,
   useCallback,
+  useMemo,
 } from "react";
 
 /**
@@ -80,14 +81,24 @@ export const CartProvider = ({ children }) => {
   );
 
   // ─── Value objet destructurable par les consumers ─────
-  const value = {
-    cart,
-    cartCount,
-    handleAddToCart,
-    handleRemoveFromCart,
-    clearCart,
-    isInCart,
-  };
+  const value = useMemo(
+    () => ({
+      cart,
+      cartCount,
+      handleAddToCart,
+      handleRemoveFromCart,
+      clearCart,
+      isInCart,
+    }),
+    [
+      cart,
+      cartCount,
+      handleAddToCart,
+      handleRemoveFromCart,
+      clearCart,
+      isInCart,
+    ],
+  );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

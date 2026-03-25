@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 export default function Register() {
   const navigate = useNavigate();
+  const { register: registerUser } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,6 +14,7 @@ export default function Register() {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
   const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
@@ -61,18 +64,21 @@ export default function Register() {
       return;
     }
     setLoading(true);
-    // Simulation d'inscription
-    setTimeout(() => {
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-        }),
-      );
-      setLoading(false);
+    setApiError("");
+
+    const result = await registerUser(
+      formData.email,
+      formData.password,
+      formData.name,
+    );
+
+    if (result.success) {
       navigate("/");
-    }, 1000);
+    } else {
+      setApiError(result.error || "Erreur lors de l'inscription");
+    }
+
+    setLoading(false);
   };
 
   const inputClass = (field) =>
@@ -91,7 +97,13 @@ export default function Register() {
 
       {/* Formulaire */}
       <div className="border border-white/20 rounded-lg p-8 w-full max-w-md">
-        <h2 className="text-white text-2xl font-bold mb-6">S&apos;inscrire</h2>
+        <h2 className="text-white text-2xl font-bold mb-6">S'inscrire</h2>
+
+        {apiError && (
+          <div className="bg-primary/20 border border-primary text-primary px-4 py-3 rounded mb-4">
+            {apiError}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} noValidate>
           {/* Nom */}
@@ -162,7 +174,7 @@ export default function Register() {
             disabled={loading}
             className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded transition-colors disabled:opacity-60"
           >
-            {loading ? "Inscription en cours…" : "S'inscrire"}
+            {loading ? "Inscription en cours..." : "S'inscrire"}
           </button>
         </form>
 

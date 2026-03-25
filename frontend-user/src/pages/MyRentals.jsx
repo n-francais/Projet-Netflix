@@ -1,15 +1,53 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
+import { useAuth } from "../context/AuthProvider";
+import { getMyRentals } from "../services/rentalService";
 
 export default function MyRentals() {
+  const navigate = useNavigate();
+  const { token, isAuthenticated } = useAuth();
   const [rentals, setRentals] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Charger les locations depuis localStorage
+  // Vérifier si l'utilisateur est authentifié
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("rentals") || "[]");
-    setRentals(stored);
-  }, []);
+    if (!isAuthenticated()) {
+      navigate("/login");
+    }
+  }, [isAuthenticated, navigate]);
+
+  // Charger les locations depuis l'API
+  useEffect(() => {
+    const fetchRentals = async () => {
+      if (!token) return;
+
+      const result = await getMyRentals(token);
+
+      if (result.success) {
+        setRentals(result.rentals || []);
+      } else {
+        setError(result.error);
+      }
+
+      setLoading(false);
+    };
+
+    fetchRentals();
+  }, [token]);
+
+  // État de chargement
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-netflix-black text-white">
+        <Navbar />
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-netflix-black text-white">
@@ -17,6 +55,12 @@ export default function MyRentals() {
 
       <div className="px-4 md:px-12 pt-24 pb-12">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Mes locations</h1>
+
+        {error && (
+          <div className="bg-primary/20 border border-primary text-primary px-4 py-3 rounded mb-6">
+            {error}
+          </div>
+        )}
 
         {rentals.length === 0 ? (
           /* ── État vide ── */
@@ -47,21 +91,27 @@ export default function MyRentals() {
             </Link>
           </div>
         ) : (
-          /* ── Grille des films loués ── */
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {rentals.map((movie) => (
-              <Link key={movie.id} to={`/movie/${movie.id}`} className="group">
+            {rentals.map((rental) => (
+              <Link
+                key={rental._id}
+                to={`/movie/${rental.movie._id}`}
+                className="group"
+              >
                 <div className="overflow-hidden rounded-lg">
                   <img
-                    src={movie.banner || movie.image}
-                    alt={movie.title}
+                    src={rental.movie.thumbnail}
+                    alt={rental.movie.title}
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="font-bold mt-2">{movie.title}</h3>
+                <h3 className="font-bold mt-2">{rental.movie.title}</h3>
                 <p className="text-netflix-text text-xs">
-                  Expire le:{" "}
-                  {new Date(movie.expiryDate).toLocaleDateString("fr-FR")}
+                  Statut: {rental.status === "active" ? "En cours" : "Terminée"}
+                </p>
+                <p className="text-netflix-text text-xs">
+                  Depuis le:{" "}
+                  {new Date(rental.rentalDate).toLocaleDateString("fr-FR")}
                 </p>
               </Link>
             ))}
